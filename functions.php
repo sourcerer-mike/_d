@@ -105,6 +105,27 @@ function _s_scripts() {
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
 /**
+ * Retrieve current theme directory.
+ *
+ * Allows to overwrite single files in a child-theme.
+ *
+ * Look up a file in the current theme.
+ * If it does not exists there, the parent theme will be used.
+ *
+ * @param string $file Target file inside the theme.
+ *
+ * @return string Template directory path.
+ */
+function _s_get_theme_directory( $file ) {
+	$stylesheet = get_stylesheet_directory() . '/' . ltrim( $file, '/' );
+	if ( is_readable( $stylesheet ) ) {
+		return $stylesheet;
+	}
+
+	return get_template_directory() . '/' . ltrim( $file, '/' );
+}
+
+/**
  * Implement the Custom Header feature.
  */
 //require get_template_directory() . '/inc/custom-header.php';
@@ -128,3 +149,7 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+require_once _s_get_theme_directory( 'inc/cpt-header.php' );
+
+require_once _s_get_theme_directory( 'inc/cpt-footer.php' );

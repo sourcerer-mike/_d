@@ -1,7 +1,20 @@
-_s
+_d
 ===
 
-Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Hi.
+I forked the starter theme called `_s` (or `underscores`) to `_d` (or `underscored`), because I liked to.
+I'm a theme meant for branding so don't use me as a Parent Theme.
+Instead try turning me into the next, most awesome, WordPress theme out there.
+That's what I'm here for.
+
+Differences against "_s"
+------------------------
+
+- Easily **manage the footer via TinyMCE** in the backend.
+  I am about to develop this and will ask "_s" for a merge.
+
+Equal to "_s"
+-------------
 
 My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
 
