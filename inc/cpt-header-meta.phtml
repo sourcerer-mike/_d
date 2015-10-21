@@ -1,0 +1,44 @@
+<?php
+
+$page_templates                    = get_page_templates();
+$page_templates[ __( 'Default' ) ] = '_default';
+
+ksort( $page_templates );
+
+$current = '';
+if ( $post && $post->ID ) {
+	$current = get_post_meta( $post->ID, '_page_template', true );
+}
+
+if ( isset( $_GET['template'] ) && in_array( $_GET['template'], $page_templates ) ) {
+	$current = $_GET['template'];
+}
+
+?>
+
+<?php wp_nonce_field( 'cpt_header_meta_box', 'cpt_header_meta_box_nonce' ); ?>
+
+<table class="form-table">
+	<td style="vertical-align: top">
+		<label for="_page_template">
+			<?php echo __( 'Choose template:' ) ?>
+		</label>
+	</td>
+	<td>
+		<select name="_page_template" id="_page_template">
+			<?php foreach ( $page_templates as $label => $value ): ?>
+				<option value="<?php echo $value ?>"
+					<?php selected( $current == $value ) ?>
+					>
+					<?php echo $label ?>
+				</option>
+			<?php endforeach; ?>
+		</select>
+		<br />
+		<small>
+			<?php _e('This is the template where the header belongs to.'); ?>
+		</small>
+	</td>
+</table>
+
+

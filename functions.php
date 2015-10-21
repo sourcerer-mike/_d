@@ -150,4 +150,6 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+require_once _s_get_theme_directory( 'inc/cpt-header.php' );
+
 require_once _s_get_theme_directory( 'inc/cpt-footer.php' );
