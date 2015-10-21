@@ -6,11 +6,24 @@
  *
  * @package _s
  */
+
+$footer = _s_get_template_footer();
+
+if ( $footer ) {
+	$footer = do_shortcode( $footer->post_content );
+	$footer = apply_filters( '_s_theme_footer', $footer );
+}
+
 ?>
 
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<?php if ( $footer ): ?>
+			<div class="_s-footer">
+				<?php echo $footer ?>
+			</div>
+		<?php endif; ?>
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', '_s' ) ); ?>"><?php printf( __( 'Proudly powered by %s', '_s' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
