@@ -1,0 +1,10 @@
+{
+  "name": "sourcerer-mike/_d",
+  "type": "wordpress-theme",
+  "config": {
+    "vendor-dir": "lib"
+  },
+  "require": {
+    "twbs/bootstrap": "v4.0.0-alpha.4"
+  }
+}
