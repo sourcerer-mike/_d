@@ -1,0 +1,5 @@
+# No composer stuff in repo
+
+/lib
+composer.lock
+
