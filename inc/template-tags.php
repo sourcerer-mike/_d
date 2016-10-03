@@ -7,6 +7,8 @@
  * @package _s
  */
 
+namespace _s;
+
 if ( ! function_exists( '_s_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.

@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace _s;
+
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *

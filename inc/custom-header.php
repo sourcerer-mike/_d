@@ -15,6 +15,8 @@
  * @package _s
  */
 
+namespace _s;
+
 /**
  * Set up the WordPress core custom header feature.
  *

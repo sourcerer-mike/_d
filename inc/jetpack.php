@@ -7,6 +7,8 @@
  * @package _s
  */
 
+namespace _s;
+
 /**
  * Jetpack setup function.
  *

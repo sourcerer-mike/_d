@@ -1,5 +1,7 @@
 <?php
 
+namespace _s;
+
 /**
  * Register post type
  */

@@ -7,6 +7,8 @@
  * @package _s
  */
 
+namespace _s;
+
 /**
  * Adds support for wp.com-specific theme functions.
  *

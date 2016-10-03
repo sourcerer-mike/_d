@@ -63,6 +63,8 @@ before_script:
     - if [[ "$SNIFF" == "1" ]]; then npm install -g jshint; fi
     # Pull in the WP Core jshint rules.
     - if [[ "$SNIFF" == "1" ]]; then wget https://develop.svn.wordpress.org/trunk/.jshintrc; fi
+    # Install packages
+    - composer install
 
 # Run test script commands.
 # Default is specific to project language.
@@ -84,6 +86,8 @@ script:
     # --standard: Use WordPress as the standard.
     # --extensions: Only sniff PHP files.
     - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php; fi
+    # Run UnitTests
+    - lib/bin/phpunit -c etc/phpunit.xml
 
 # Receive notifications for build results.
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications

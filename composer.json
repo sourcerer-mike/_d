@@ -4,7 +4,9 @@
   "config": {
     "vendor-dir": "lib"
   },
-  "require": {
+  "require-dev": {
+    "phpunit/phpunit": "~5",
+    "mockery/mockery": "~0.9",
     "twbs/bootstrap": "v4.0.0-alpha.4"
   }
 }

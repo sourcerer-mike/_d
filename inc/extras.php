@@ -7,6 +7,8 @@
  * @package _s
  */
 
+namespace _s;
+
 /**
  * Adds custom classes to the array of body classes.
  *

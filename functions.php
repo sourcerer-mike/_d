@@ -7,6 +7,8 @@
  * @package _s
  */
 
+namespace _s;
+
 if ( ! function_exists( '_s_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -135,31 +137,12 @@ function _s_get_theme_directory( $file ) {
 	return get_template_directory() . '/' . ltrim( $file, '/' );
 }
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
+// just load everything from "inc" folder
 
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
+foreach ( glob(__DIR__ . '/inc/*.php') as $includes_file ) {
+	$includes_file = trim( str_replace( __DIR__, '', $includes_file ), '/' );
 
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
+	$includes_file = locate_template($includes_file);
 
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
-
-require_once _s_get_theme_directory( 'inc/cpt-header.php' );
-
-require_once _s_get_theme_directory( 'inc/cpt-footer.php' );
+	require_once $includes_file;
+}
