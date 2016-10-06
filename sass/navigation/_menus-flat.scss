@@ -1,0 +1,38 @@
+$main-navigation_margin: 0.5em;
+$menu-item_padding: 0.5em;
+
+.main-navigation {
+  background: $color_menu_background;
+
+  .nav-menu {
+    > .menu-item {
+      margin: 0 $main-navigation_margin;
+    }
+
+    .menu-item {
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      a {
+        background: darken($color_menu_background, 10%);
+
+        color: $color_menu_text;
+        padding: $menu-item_padding;
+      }
+
+      a:hover {
+        background: lighten($color_menu_background, 10%);
+      }
+
+      ul.sub-menu {
+        top: 1.5em + 2*$menu-item_padding;
+      }
+    }
+  }
+}

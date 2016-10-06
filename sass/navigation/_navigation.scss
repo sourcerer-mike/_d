@@ -7,3 +7,9 @@
 ## Menus
 --------------------------------------------------------------*/
 @import "menus";
+@import "menus-flat";
+
+.main-navigation {
+  @extend .offset-lg-1-12;
+  @extend .col-lg-10-12;
+}
