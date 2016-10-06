@@ -1,17 +1,13 @@
 .content-area {
 	float: right;
-	margin: 0 0 0 (-$size__site-sidebar);
-	width: $size__site-main;
-}
-
-.site-main {
-	margin: 0 0 0 $size__site-sidebar;
+	@extend .col-lg-3-4;
+	@extend .col-xs-4-4;
 }
 
 .site-content .widget-area {
 	float: left;
-	overflow: hidden;
-	width: $size__site-sidebar;
+	@extend .col-lg-1-4;
+	@extend .col-xs-4-4;
 }
 
 .site-footer {
